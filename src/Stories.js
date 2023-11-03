@@ -9,7 +9,6 @@ const Stories = () => {
          const res = await fetch(url);
          const data = await res.json();
          console.log(data);
-         isLoading = false;
       } catch (error) {
          console.log(error);
       }
