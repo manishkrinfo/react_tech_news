@@ -12,6 +12,11 @@ const reducer = (state, action) => {
             ...state,
             isLoading : true,
          }
+      case "REMOVE_STORIES" : 
+         return {
+            ...state,
+            hits : state.hits.filter((curElem) => curElem.objectID != action.payload ),
+         }
    }
 
    return state;

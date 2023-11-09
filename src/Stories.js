@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useGlobalContext } from './context'
 
 const Stories = () => {
-   const {hits, nbPage, isLoading} = useGlobalContext();
+   const {hits, nbPage, isLoading, removePost} = useGlobalContext();
    if(isLoading) {
       return <>
          Loading ...
@@ -22,7 +22,7 @@ const Stories = () => {
                   </p>
                   <div className='card-button'>
                      <a href={url} target="_blank">Read More</a>
-                     <a href="#">Remove</a>
+                     <a href="#" onClick={() => removePost(objectID)}>Remove</a>
                   </div>
                </div>
             )
