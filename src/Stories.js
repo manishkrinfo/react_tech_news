@@ -5,7 +5,7 @@ const Stories = () => {
    const {hits, nbPage, isLoading, removePost} = useGlobalContext();
    if(isLoading) {
       return <>
-         Loading ...
+         <h1>Loading ...</h1>
       </>
    }
    
