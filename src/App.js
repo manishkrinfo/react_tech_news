@@ -8,8 +8,8 @@ const App = () => {
   return (
     <>
       <Search />
-      <Stories />
       <Pagination />
+      <Stories />
     </>
   )
 }

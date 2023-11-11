@@ -56,12 +56,25 @@ const AppProvider = ({children}) => {
       });
    }
 
+   //pagination
+   const getNextPage = () => {
+      dispatch({
+         type : "NEXT_PAGE",
+      })
+   }
+
+   const getPrevPage = () => {
+      dispatch({
+         type : "PREV_PAGE",
+      })
+   }
+
    useEffect(() => {
       fetchApiData(`${API}query=${state.query}&page=${state.page}`);
-   }, [state.query]);
+   }, [state.query, state.page]);
 
    return (
-      <AppContext.Provider value={{...state, removePost, searchStories}}>
+      <AppContext.Provider value={{...state, removePost, searchStories, getNextPage, getPrevPage}}>
          {children}
       </AppContext.Provider>
    )
